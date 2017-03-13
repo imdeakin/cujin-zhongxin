@@ -1,0 +1,91 @@
+.container {
+    width: 1002px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.separator {
+    position: relative;
+    padding: 0 16px;
+}
+
+.separator s {
+    float: left;
+    border-left: 1px solid #f3f3f3;
+    border-right: 1px solid #ccc;
+    height: 36px;
+}
+
+#header {
+    background: url("../img/bg_01.png");
+}
+
+#header .main .separator {
+    padding: 10px 16px 0;
+}
+
+#header .main .separator s {
+    height: 36px;
+}
+
+/**
+ * 页头导航
+ */
+#header .nav-wrap {
+    background: url("../img/nav_bg.png") repeat;
+    border-bottom: 5px solid #ff0000;
+    font-size: 0;
+}
+
+#header .nav li {
+    width: 14.2857142%;
+}
+
+#header .nav a {
+    padding: 0;
+    line-height: 46px;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#header .nav li.active, #header .nav li:hover {
+    background: url("../img/nav_bg_active.png") repeat;
+}
+
+/*
+ * 页脚导航
+ */
+#footer .nav-wrap {
+    background: #333333;
+    font-size: 0;
+}
+
+#footer .nav li {
+    width: 14.2857142%;
+}
+
+#footer .nav a {
+    padding: 0;
+    line-height: 46px;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+#footer .nav a:hover {
+    text-decoration: underline;
+}
+
+/**
+ * 页脚分隔条
+ */
+#footer .main .separator {
+    padding: 0 16px 0;
+}
+
+#footer .main .separator s {
+    height: 76px;
+}

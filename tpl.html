@@ -1,0 +1,93 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="favicon.ico" rel="shortcut icon"/>
+</head>
+<body>
+<div id="wrapper">
+    <!--页眉导航-->
+    <script type="text/html" id="header-nav-tpl">
+        <div class="bg-blue">
+            <div class="container">
+                <ul class="nav nav-inline clearfix text-big text-center weight-big">
+                    <li class="x2 padding-top-bottom"><a href="index.html" class="text-white">网站首页</a></li>
+                    <li class="x2 padding-top-bottom"><a href="about.html" class="text-white">关于我们</a></li>
+                    <li class="x2 padding-top-bottom"><a href="news.html" class="text-white">资讯中心</a></li>
+                    <li class="x2 padding-top-bottom"><a href="product.html" class="text-white">托恩出品</a></li>
+                    <li class="x2 padding-top-bottom"><a href="join.html" class="text-white">加入我们</a></li>
+                    <li class="x2 padding-top-bottom"><a href="contact.html" class="text-white">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </script>
+    <!--页脚导航-->
+    <script type="text/html" id="footer-nav-tpl">
+        <ul class="nav nav-inline clearfix text-big text-center bg-blue">
+            <li class="x2 padding-top-bottom-small"><a href="index.html" class="text-white">网站首页</a></li>
+            <li class="x2 padding-top-bottom-small"><a href="about.html" class="text-white">关于我们</a></li>
+            <li class="x2 padding-top-bottom-small"><a href="news.html" class="text-white">资讯中心</a></li>
+            <li class="x2 padding-top-bottom-small"><a href="product.html" class="text-white">托恩出品</a></li>
+            <li class="x2 padding-top-bottom-small"><a href="join.html" class="text-white">加入我们</a></li>
+            <li class="x2 padding-top-bottom-small"><a href="contact.html" class="text-white">联系我们</a></li>
+        </ul>
+    </script>
+    <!--页脚信息-->
+    <script type="text/html" id="footer-info-tpl">
+        <div class="clearfix text-center text-gray padding-big-top padding-big-bottom">
+            <address class="padding-top-bottom-little">地址：{{d['contanct_address']}} 400电话：{{d['company_tel']}}
+                电话：{{d['telephone']}} 邮箱：{{d['mail']}}
+            </address>
+            <div class="padding-top-bottom-little">版权所有:广州托恩医药科技有限公司</div>
+            <div class="padding-top-bottom-little">Copyright&copy;tuoen.com CO.,LTD All Right Reserved</div>
+        </div>
+    </script>
+    <!--Banner轮播图-->
+    <script type="text/html" id="banner-slide-tpl">
+        {{# for(var i = 0, len = d.length; i < len; i++){ var t = d[i]; }}
+        <div class="swiper-slide">
+            <img src="{{apiPath.imgRoot + t['image']}}" class="img-fluid">
+        </div>
+        {{# } }}
+    </script>
+    <script type="text/html" id="service-list-tpl">
+        {{# for(var i = 0, len = d.length; i < len; i++){var t = d[i]; }}
+        <div class="x4 service-item">
+            <img src="{{t['icon']}}">
+            <h5>{{t["title"]}}</h5>
+            <div class="line"></div>
+            <div class="scribe">{{t["describe"]}}</div>
+        </div>
+        {{# } }}
+    </script>
+    <script type="text/html" id="partner-slide-tpl">
+        {{# for(var i = 0, len = d.length; i < len; i++){var t = d[i]; }}
+        <div class="swiper-slide">
+            {{# for(var i2 = 0, len1 = t.length; i2 < len1; i2++){var t2 = t[i2]; }}
+            <div class="x3">
+                <a href="{{t2['companyUrl']}}" target="_blank">
+                    <img class="img-fluid" title="{{t2['name']}}"
+                         src="{{apiPath.imgRoot + t2['logo']}}" alt="{{t2['name']}}">
+                </a>
+            </div>
+            {{# } }}
+        </div>
+        {{# } }}
+    </script>
+    <script type="text/html" id="case-slide-tpl">
+        {{# for(var i = 0, len = d.length; i < len; i++){var t = d[i]; }}
+        <div class="swiper-slide">
+            <a href="javascript:;">
+                <img class="img-fluid" title="{{t['name']}}"
+                     src="{{apiPath.imgRoot + t['image']}}" alt="{{t['name']}}">
+            </a>
+        </div>
+        {{# } }}
+    </script>
+</div>
+</body>
+</html>
