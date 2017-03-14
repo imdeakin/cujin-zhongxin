@@ -7,7 +7,7 @@ var mCom = {
             return this.getTpl();
         },
         getTpl: function () {
-            return $.getHtml('header-component.html');
+            return $.getHtml('com/header.component.html');
         }
     },
     footerComponent: {
@@ -18,7 +18,7 @@ var mCom = {
             return this.getTpl();
         },
         getTpl: function () {
-            return $.getHtml('footer-component.html');
+            return $.getHtml('com/footer.component.html');
         }
     }
 };
