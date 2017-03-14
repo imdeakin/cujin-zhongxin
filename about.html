@@ -1,0 +1,66 @@
+<!doctype html>
+<html class="no-js" lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!--<link rel="stylesheet" href="css/normalize.css">-->
+    <link rel="stylesheet" href="css/pintuer.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <!--[if lte IE 8]>
+    <script type="text/javascript" src="js/vendor/html5.js"></script>
+    <script type="text/javascript" src="js/vendor/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<header id="header"></header>
+<div id="main" class="clearfix padding-top-bottom">
+    <div class="container">
+        <div class="content">
+            <div class="crumbs border border-gray radius"></div>
+            <div class="art border border-gray radius margin-top"></div>
+        </div>
+        <div class="sidebar">
+            <div class="class"></div>
+            <div class="prod"></div>
+            <div class="info"></div>
+        </div>
+    </div>
+</div>
+<footer id="footer"></footer>
+<script src="js/vendor/jquery-1.12.0.min.js"></script>
+<script src="js/vendor/laytpl.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script src="js/vendor/pintuer.js"></script>
+<script>
+    $(function () {
+        //导航状态
+        $('#header .nav li:eq(1)').addClass('active').siblings().removeClass('active');
+
+        //面包屑导航
+        mCom.crumbsComponent.init('#main > .container > .content > .crumbs');
+        mCom.articleComponent.init('#main > .container > .content > .art');
+
+        //侧边栏
+        mCom.classMenuComponent2.init('#main > .container > .sidebar > .class');
+        $('#main > .container > .sidebar > .prod').html(mCom.sidebarProdComponent.getHtml());
+        $('#main > .container > .sidebar > .info').html(mCom.sidebarInfoComponent.getHtml());
+    });
+</script>
+</body>
+</html>

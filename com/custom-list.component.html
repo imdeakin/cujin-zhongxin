@@ -1,0 +1,13 @@
+<div class="custom-list">
+    {{# for(var i = 0, len = d.length; i < len; i++){ var t = d[i]; }}
+    <div class="item">
+        <img class="brand" src="{{t.img}}">
+        <div class="info">
+            <h3 class="title">{{t.title}}</h3>
+            <div class="name">公司：{{t.name}}</div>
+            <div class="time">时间：{{t.time}}</div>
+            <div class="more"><a href="#">[查看详情]</a></div>
+        </div>
+    </div>
+    {{# } }}
+</div>

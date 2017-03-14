@@ -28,11 +28,73 @@
     your browser</a> to improve your experience.</p>
 <![endif]-->
 <header id="header"></header>
-<div id="main"></div>
+<div id="main" class="clearfix padding-top-bottom">
+    <div class="container">
+        <div class="content"></div>
+        <div class="sidebar">
+            <div class="class"></div>
+            <div class="prod"></div>
+            <div class="info"></div>
+        </div>
+        <div class="clear"></div>
+        <div id="custom-board">
+            <div class="head"></div>
+            <div class="content"></div>
+        </div>
+        <div id="about-board">
+            <div class="head"></div>
+            <div class="content">
+                <h3>广州杰美服装有限公司</h3>
+                <p>
+                    广州杰美服装有限公司是一家集设计、面料开发，生产、销售、CT策划为一体的专业制服公司，于2004年在广州市番禺建厂，其厂房规模面积达10000平方米，厂内员工有600多人，（其中部分职员办公司地点在广州白云区）是广东制服生产龙头企业。
+                    杰美公司生产基地凭借从德国（凤眼机、珠边机）、日本（开袋机、挑襟机，验布机，粘衬机）、意大利（缩水机，高温人体西装定型机）引进的最先进的生产设备，以及雄厚的生产实力和完善的管理体系，为国内各行各业制服生产，提供了尽善尽美的专业服务。
+                    杰美服装有限公司是从事金融业，房地产，保险业，工矿企业，物业公司等设计开发，生产制作，销售为一体的专业制服公司，同时还致力于国家环保，航空，铁路，海关，行政机关，学校制服的研制开发。
+                    我们把各大企业的CI，VI系统导入制服的设计中，根据各个合作伙伴的不同定位，为每一个合作伙伴供量身定做的服务，从而确保每一个客户可以身着具有本企业...<a class="more"
+                                                                                                   href="#">[查看详情]</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 <footer id="footer"></footer>
 <script src="js/vendor/jquery-1.12.0.min.js"></script>
+<script src="js/vendor/laytpl.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 <script src="js/vendor/pintuer.js"></script>
+<script>
+    $(function () {
+        //正文
+        mCom.headBarComponent.data = {
+            title: "新品推荐",
+            subtitle: "NEW PRODUCTS",
+            url: ""
+        };
+        mCom.headBarComponent.init('#main > .container > .content');
+        mCom.simpleProdListComponent.init('#main > .container > .content');
+
+        //客户案例
+        mCom.headBarComponent.data = {
+            title: "客户案例",
+            subtitle: "CUSTOMER CASE",
+            url: ""
+        };
+        mCom.headBarComponent.init('#custom-board > .head');
+        mCom.customListComponent.init('#custom-board > .content');
+
+        //关于我们
+        mCom.headBarComponent.data = {
+            title: "关于我们",
+            subtitle: "ABOUT PATON GROUP",
+            url: ""
+        };
+        mCom.headBarComponent.init('#about-board > .head');
+
+        //侧边栏
+        $('#main > .container > .sidebar > .class').html(mCom.sidebarClassComponent.getHtml());
+        $('#main > .container > .sidebar > .prod').html(mCom.sidebarProdComponent.getHtml());
+        $('#main > .container > .sidebar > .info').html(mCom.sidebarInfoComponent.getHtml());
+    });
+</script>
 </body>
 </html>

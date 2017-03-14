@@ -1,9 +1,9 @@
 <!--分类菜单-->
-<div class="class-menu">
-    <div class="title">》{{d.title}}《</div>
+<div class="class-menu class-menu2">
+    <div class="title">{{d.title}}</div>
     <ul class="nav">
         {{# for(var i = 0, list = d.list, len = list.length; i < len; i++){ var t = list[i]; }}
-        <li><a href="javascript:;"><img src="{{t.img}}">{{t.name}}</a></li>
+        <li><a href="javascript:;">{{t.name}}</a></li>
         {{# } }}
     </ul>
 </div>
