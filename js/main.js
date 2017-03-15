@@ -145,6 +145,9 @@ var mCom = {
     },
     // 侧边栏——产品推荐组
     sidebarProdComponent: {
+        init: function (con) {
+            return $(con).html(this.getHtml());
+        },
         getHtml: function () {
             var con = $(this.getTpl());
             con.find('.content').empty().append(mCom.sidebarProdListComponent.getHtml());
@@ -304,6 +307,166 @@ var mCom = {
             }
         ]
     },
+    // 产品列表——富美版
+    fullProdListComponent: {
+        init: function (con) {
+            return $(con).append(this.getHtml());
+        },
+        getHtml: function () {
+            return laytpl(this.getTpl()).render(this.data);
+        },
+        getTpl: function () {
+            return $.getHtml('com/full-prod-list.component.html');
+        },
+        data: [
+            {
+                img: "img/prod_01.jpg",
+                name: "商务西装正装套装(BDSEM024)",
+                id: "1"
+            },
+            {
+                img: "img/prod_01.jpg",
+                name: "商务西装正装套装(BDSEM024)",
+                id: "1"
+            },
+            {
+                img: "img/prod_01.jpg",
+                name: "商务西装正装套装(BDSEM024)",
+                id: "1"
+            },
+            {
+                img: "img/prod_01.jpg",
+                name: "商务西装正装套装(BDSEM024)",
+                id: "1"
+            },
+            {
+                img: "img/prod_01.jpg",
+                name: "商务西装正装套装(BDSEM024)",
+                id: "1"
+            },
+            {
+                img: "img/prod_01.jpg",
+                name: "商务西装正装套装(BDSEM024)",
+                id: "1"
+            },
+            {
+                img: "img/prod_01.jpg",
+                name: "商务西装正装套装(BDSEM024)",
+                id: "1"
+            },
+            {
+                img: "img/prod_01.jpg",
+                name: "商务西装正装套装(BDSEM024)",
+                id: "1"
+            },
+            {
+                img: "img/prod_01.jpg",
+                name: "商务西装正装套装(BDSEM024)",
+                id: "1"
+            },
+            {
+                img: "img/prod_01.jpg",
+                name: "商务西装正装套装(BDSEM024)",
+                id: "1"
+            },
+            {
+                img: "img/prod_01.jpg",
+                name: "商务西装正装套装(BDSEM024)",
+                id: "1"
+            },
+            {
+                img: "img/prod_01.jpg",
+                name: "商务西装正装套装(BDSEM024)",
+                id: "1"
+            },
+            {
+                img: "img/prod_01.jpg",
+                name: "商务西装正装套装(BDSEM024)",
+                id: "1"
+            },
+            {
+                img: "img/prod_01.jpg",
+                name: "商务西装正装套装(BDSEM024)",
+                id: "1"
+            },
+            {
+                img: "img/prod_01.jpg",
+                name: "商务西装正装套装(BDSEM024)",
+                id: "1"
+            }
+        ]
+    },
+    // 新闻列表
+    newsListComponent: {
+        init: function (con) {
+            return $(con).append(this.getHtml());
+        },
+        getHtml: function () {
+            return laytpl(this.getTpl()).render(this.data);
+        },
+        getTpl: function () {
+            return $.getHtml('com/news-list.component.html');
+        },
+        data: [
+            {
+                img: "img/prod_01.jpg",
+                title: "波司登董事长高德康参与两会:培养工匠型的一线工人",
+                time: "2017-03-06",
+                content: "“中国制造业的转型升级，离不开一大批工匠型的一线产业工人。”十二届全国人大代表、波司登集团董事长在接受记者采访时说。",
+                id: "1"
+            },
+            {
+                img: "img/prod_01.jpg",
+                title: "波司登董事长高德康参与两会:培养工匠型的一线工人",
+                time: "2017-03-06",
+                content: "“中国制造业的转型升级，离不开一大批工匠型的一线产业工人。”十二届全国人大代表、波司登集团董事长在接受记者采访时说。",
+                id: "1"
+            },
+            {
+                img: "img/prod_01.jpg",
+                title: "波司登董事长高德康参与两会:培养工匠型的一线工人",
+                time: "2017-03-06",
+                content: "“中国制造业的转型升级，离不开一大批工匠型的一线产业工人。”十二届全国人大代表、波司登集团董事长在接受记者采访时说。",
+                id: "1"
+            },
+            {
+                img: "img/prod_01.jpg",
+                title: "波司登董事长高德康参与两会:培养工匠型的一线工人",
+                time: "2017-03-06",
+                content: "“中国制造业的转型升级，离不开一大批工匠型的一线产业工人。”十二届全国人大代表、波司登集团董事长在接受记者采访时说。",
+                id: "1"
+            },
+            {
+                img: "img/prod_01.jpg",
+                title: "波司登董事长高德康参与两会:培养工匠型的一线工人",
+                time: "2017-03-06",
+                content: "“中国制造业的转型升级，离不开一大批工匠型的一线产业工人。”十二届全国人大代表、波司登集团董事长在接受记者采访时说。",
+                id: "1"
+            }
+        ]
+    },
+    // 新闻详情
+    newsDetailComponent: {
+        init: function (con) {
+            return $(con).append(this.getHtml());
+        },
+        getHtml: function () {
+            return laytpl(this.getTpl()).render(this.data);
+        },
+        getTpl: function () {
+            return $.getHtml('com/news-detail.component.html');
+        },
+        data: {
+            img: "img/prod_01.jpg",
+            title: "波司登董事长高德康参与两会:培养工匠型的一线工人",
+            author: "杰美小编",
+            from: "新闻中心",
+            count: 23,
+            time: "2017-03-06",
+            content: "“中国制造业的转型升级，离不开一大批工匠型的一线产业工人。”十二届全国人大代表、波司登集团董事长在接受记者采访时说。",
+            id: "1"
+        }
+    },
     // 客户列表
     customListComponent: {
         init: function (con) {
@@ -405,11 +568,385 @@ var mCom = {
             '我们把各大企业的CI，VI系统导入制服的设计中，根据各个合作伙伴的不同定位，为每一个合作伙伴供量身定做的服务，从而确保每一个客户可以身着具有本企业特色，体现企业品牌内涵及独特企业文化的制服。' +
             '</p><div class="text-center"><img class="img-responsive" src="img/about.png"></div>'
         }
+    },
+    // 案例列表
+    caseListComponent: {
+        init: function (con) {
+            return $(con).append(this.getHtml());
+        },
+        getHtml: function () {
+            return laytpl(this.getTpl()).render(this.data);
+        },
+        getTpl: function () {
+            return $.getHtml('com/case-list.component.html');
+        },
+        data: [
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            }
+        ]
+    },
+    // 相关板块
+    relevantComponent: {
+        init: function (con) {
+            return $(con).append(this.getHtml());
+        },
+        getHtml: function () {
+            return laytpl(this.getTpl()).render(this.data);
+        },
+        getTpl: function () {
+            return $.getHtml('com/relevant.component.html');
+        },
+        data: {
+            listHtml: ''
+        }
+    },
+    // 相关案例列表
+    relevantCaseListComponent: {
+        init: function (con) {
+            return $(con).append(this.getHtml());
+        },
+        getHtml: function () {
+            return laytpl(this.getTpl()).render(this.data);
+        },
+        getTpl: function () {
+            return $.getHtml('com/relevant-case-list.component.html');
+        },
+        data: [
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            }
+        ]
+    },
+    // 客服浮窗
+    kfComponent: {
+        init: function (con) {
+            return $(con).append(this.getHtml());
+        },
+        getHtml: function () {
+            return laytpl(this.getTpl()).render(this.data);
+        },
+        getTpl: function () {
+            return $.getHtml('com/kf.component.html');
+        },
+        data: [
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            },
+            {
+                img: "img/case.png",
+                name: "中国石化",
+                id: "1"
+            }
+        ]
     }
 };
 
 $(function () {
     mCom.headerComponent.init();
     mCom.footerComponent.init();
+    mCom.kfComponent.init('#main > .container');
+    $('.kf-board .label').click(function () {
+        var lable = $(this);
+        if (lable.hasClass('active')) {
+            lable.parent('.kf-board').animate({
+                right: -170
+            }, function () {
+                lable.removeClass('active');
+            })
+        } else {
+            lable.parent('.kf-board').animate({
+                right: 0
+            }, function () {
+                lable.addClass('active');
+            })
+        }
+    });
 });
 

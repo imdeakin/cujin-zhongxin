@@ -1,0 +1,172 @@
+<!doctype html>
+<html class="no-js" lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!--<link rel="stylesheet" href="css/normalize.css">-->
+    <link rel="stylesheet" href="css/pintuer.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <!--[if lte IE 8]>
+    <script type="text/javascript" src="js/vendor/html5.js"></script>
+    <script type="text/javascript" src="js/vendor/respond.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css"/>
+    <style>
+        #map {
+            height: 350px;
+        }
+    </style>
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<header id="header"></header>
+<div id="main" class="clearfix padding-top-bottom">
+    <div class="container">
+        <div class="content">
+            <div class="crumbs border border-gray radius"></div>
+            <div class="border border-gray radius margin-top">
+                <div class="main"></div>
+                <div class="padding-left-right-large margin-big-top margin-big-bottom">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="class"></div>
+            <div class="prod"></div>
+            <div class="info"></div>
+        </div>
+    </div>
+</div>
+<footer id="footer"></footer>
+<script src="js/vendor/jquery-1.12.0.min.js"></script>
+<script src="js/vendor/laytpl.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script src="js/vendor/pintuer.js"></script>
+<script type="text/html" id="contact-info-tpl">
+    <div>公司名称：</div>
+    <div>{{d.name}}</div>
+    <div class="padding-big-top">公司地址：</div>
+    <div class="padding-big-bottom">{{d.address}}</div>
+    <div class="padding-top-bottom-small">热线电话：{{d.tel}}</div>
+    <div class="padding-top-bottom-small">定制专线：{{d.hot}}</div>
+    <div class="padding-top-bottom-small">邮箱：{{d.email}}</div>
+    <div class="padding-top-bottom-small">网址：{{d.website}}</div>
+    <div class="padding-top-bottom-small">QQ号码：{{d.qq}}</div>
+    <div class="padding-top-bottom-small">销售服务：</div>
+    <div class="padding-top-bottom clearfix">
+        {{# for(var i = 0, list = d.vcode, len = list.length; i < len; i++){ var t = list[i]; }}
+        <div class="item x3 padding-large-right">
+            <img class="img-fluid border-main" src="{{t.img}}">
+        </div>
+        {{# } }}
+    </div>
+</script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5c4b6cfcdf62237013fe7c34ddb9d80c"></script>
+<script>
+    $(function () {
+        //导航状态
+        $('#header .nav > li:eq(7)').addClass('active').siblings().removeClass('active');
+
+        //面包屑导航
+        mCom.crumbsComponent.data = [
+            {
+                name: "首页",
+                url: "index.html"
+            },
+            {
+                name: "公司介绍",
+                url: "about.html"
+            },
+            {
+                name: "公司简介",
+                url: "#"
+            }
+        ];
+        mCom.crumbsComponent.init('#main > .container > .content > .crumbs');
+
+        //文章内容
+        mCom.articleComponent.data = {
+            title: "联系方式",
+            content: laytpl($('#contact-info-tpl').html()).render({
+                name: "广州杰美服装有限公司",
+                tel: "020-66359500",
+                hot: "137-6062-6692",
+                email: "admin@gzboshi.cn",
+                website: "www.gzboshi.cn",
+                qq: "178190912",
+                address: "广州市白云区福泰东路32号7楼",
+                vcode: [
+                    {
+                        img: "img/vcode_01.png"
+                    },
+                    {
+                        img: "img/vcode_02.png"
+                    },
+                    {
+                        img: "img/vcode_03.png"
+                    }
+                ]
+            })
+        };
+        mCom.articleComponent.init('#main > .container > .content > div > .main');
+
+        //百度地图
+        (function () {
+            var map = new BMap.Map('map');
+            var poi = new BMap.Point(112.92454, 23.127252);
+            map.centerAndZoom(poi, 14);
+            // map.enableScrollWheelZoom(); //开启鼠标滚动缩放
+            // map.disableDragging(); //禁止拖拽
+            var marker = new BMap.Marker(poi); //创建标注marker对象
+            map.addOverlay(marker); //在地图中添加marker
+
+            var opts = {
+                width: 180     // 信息窗口宽度
+            };
+
+            var infoWindow = new BMap.InfoWindow('<div id="mapMsg" style="line-height:24px; font-size:16px;">' +
+                '<div style="color:#990000;font-size:16px;font-weight: bold;">广州杰美服装有限公司</div>' +
+                '<div style="color:#333;font-size:14px;">企业团体制服定制专家</div>' +
+                '<div style="color:#333;font-size:14px;">国际时尚服装定制</div>' +
+                '</div>', opts);  // 创建信息窗口对象
+
+            map.openInfoWindow(infoWindow, poi); //开启信息窗口
+
+            marker.addEventListener("click", function () {
+                map.openInfoWindow(infoWindow, poi); //开启信息窗口
+            });
+        })();
+
+        //侧边栏
+        mCom.classMenuComponent2.data = {
+            title: "联系我们",
+            list: [
+                {
+                    id: "1",
+                    name: "联系我们"
+                }
+            ]
+        };
+        mCom.classMenuComponent2.init('#main > .container > .sidebar > .class');
+        mCom.sidebarProdComponent.init('#main > .container > .sidebar > .prod');
+        mCom.sidebarInfoComponent.init('#main > .container > .sidebar > .info');
+    });
+</script>
+</body>
+</html>

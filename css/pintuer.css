@@ -8734,7 +8734,7 @@ blockquote.border-dot strong,
 .nav-pills.border-main .active a,
 .nav-main.border-main .nav-head,
 .pagination.border-main .active {
-    background-color: #393f43;
+    background-color: #333;
 }
 
 /*背景-辅色*/
@@ -8773,7 +8773,7 @@ blockquote.border-dot strong,
 .nav-pills.border-dot .active a,
 .nav-main.border-dot .nav-head,
 .pagination.border-dot .active {
-    background-color: #5C6367;
+    background-color: #cc3333;
 }
 
 /*--------自定义边框色--------*/
@@ -8791,7 +8791,7 @@ blockquote.border-dot strong,
 .nav-main.border-main .nav-head,
 .pagination.border-main li,
 .pager.border-main a {
-    border-color: #393f43;
+    border-color: #ccc;
 }
 
 /*边框-辅色*/
@@ -8869,8 +8869,8 @@ blockquote.border-dot strong,
 .button.bg-main:hover,
 .button.bg-main:focus {
     color: #fff;
-    border-color: #5c6367;
-    background-color: #5c6367;
+    border-color: #000;
+    background-color: #000;
 }
 
 /*辅色-文本-边框-背景*/
@@ -8909,8 +8909,8 @@ blockquote.border-dot strong,
 .button.bg-dot:hover,
 .button.bg-dot:focus {
     color: #ffffff;
-    border-color: #393F43;
-    background-color: #393F43;
+    border-color: #990000;
+    background-color: #990000;
 }
 
 /*

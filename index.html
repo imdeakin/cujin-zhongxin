@@ -91,9 +91,9 @@
         mCom.headBarComponent.init('#about-board > .head');
 
         //侧边栏
-        $('#main > .container > .sidebar > .class').html(mCom.sidebarClassComponent.getHtml());
-        $('#main > .container > .sidebar > .prod').html(mCom.sidebarProdComponent.getHtml());
-        $('#main > .container > .sidebar > .info').html(mCom.sidebarInfoComponent.getHtml());
+        mCom.sidebarClassComponent.init('#main > .container > .sidebar > .class');
+        mCom.sidebarProdComponent.init('#main > .container > .sidebar > .prod');
+        mCom.sidebarInfoComponent.init('#main > .container > .sidebar > .info');
     });
 </script>
 </body>

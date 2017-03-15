@@ -32,7 +32,10 @@
     <div class="container">
         <div class="content">
             <div class="crumbs border border-gray radius"></div>
-            <div class="main border border-gray radius margin-top"></div>
+            <div class="border border-gray radius margin-top padding">
+                <div class="main"></div>
+                <div class="pagination padding-top-bottom-large"></div>
+            </div>
         </div>
         <div class="sidebar">
             <div class="class"></div>
@@ -44,13 +47,14 @@
 <footer id="footer"></footer>
 <script src="js/vendor/jquery-1.12.0.min.js"></script>
 <script src="js/vendor/laytpl.js"></script>
+<script src="js/vendor/jquery.pagination.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 <script src="js/vendor/pintuer.js"></script>
 <script>
     $(function () {
         //导航状态
-        $('#header .nav > li:eq(1)').addClass('active').siblings().removeClass('active');
+        $('#header .nav > li:eq(3)').addClass('active').siblings().removeClass('active');
 
         //面包屑导航
         mCom.crumbsComponent.data = [
@@ -59,56 +63,48 @@
                 url: "index.html"
             },
             {
-                name: "公司介绍",
-                url: "about.html"
+                name: "产品中心",
+                url: "prod.html"
             },
             {
-                name: "公司简介",
+                name: "职业装系列",
                 url: "#"
             }
         ];
         mCom.crumbsComponent.init('#main > .container > .content > .crumbs');
 
-        //文章内容
-        mCom.articleComponent.data = {
-            title: "公司简介",
-            content: '<p><span class="weight-big">广州杰美服装有限公司</span>是一家集设计、面料开发，生产、销售、CT策划为一体的专业制服公司，于2004年在广州市番禺建厂，其厂房规模面积达10000平方米，厂内员工有600多人，（其中部分职员办公司地点在广州白云区）是广东制服生产龙头企业。' +
-            '杰美公司生产基地凭借从德国（凤眼机、珠边机）、日本（开袋机、挑襟机，验布机，粘衬机）、意大利（缩水机，高温人体西装定型机）引进的最先进的生产设备，以及雄厚的生产实力和完善的管理体系，为国内各行各业制服生产，提供了尽善尽美的专业服务。' +
-            '杰美服装有限公司是从事金融业，房地产，保险业，工矿企业，物业公司等设计开发，生产制作，销售为一体的专业制服公司，同时还致力于国家环保，航空，铁路，海关，行政机关，学校制服的研制开发。' +
-            '我们把各大企业的CI，VI系统导入制服的设计中，根据各个合作伙伴的不同定位，为每一个合作伙伴供量身定做的服务，从而确保每一个客户可以身着具有本企业特色，体现企业品牌内涵及独特企业文化的制服。' +
-            '</p><div class="text-center"><img class="img-responsive" src="img/about.png"></div>'
-        };
-        mCom.articleComponent.init('#main > .container > .content > .main');
+        //新闻列表
+        mCom.newsListComponent.init('#main > .container > .content > div > .main');
+
+        //分页
+        $('#main > .container > .content > div > .pagination').pagination(100, {
+            items_per_page: 15,
+            current_page: 0,
+            prev_text: "上一页",
+            next_text: "下一页",
+            callback: function (index) {
+                //切换页数回调
+                //index 切换到的页数索引
+            }
+        });
 
         //侧边栏
         mCom.classMenuComponent2.data = {
-            title: "公司介绍",
+            title: "新闻中心",
             list: [
                 {
                     id: "1",
-                    name: "企业文化"
+                    name: "公司动态"
                 },
                 {
                     id: "2",
-                    name: "公司简介"
-                },
-                {
-                    id: "3",
-                    name: "经营理念"
-                },
-                {
-                    id: "4",
-                    name: "优势战略"
-                },
-                {
-                    id: "5",
-                    name: "企业资质"
+                    name: "行业动态"
                 }
             ]
         };
         mCom.classMenuComponent2.init('#main > .container > .sidebar > .class');
-        mCom.sidebarProdComponent.init('#main > .container > .sidebar > .prod');
-        mCom.sidebarInfoComponent.init('#main > .container > .sidebar > .info');
+        $('#main > .container > .sidebar > .prod').html(mCom.sidebarProdComponent.getHtml());
+        $('#main > .container > .sidebar > .info').html(mCom.sidebarInfoComponent.getHtml());
     });
 </script>
 </body>
