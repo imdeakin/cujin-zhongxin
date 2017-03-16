@@ -925,6 +925,97 @@ var mCom = {
                 id: "1"
             }
         ]
+    },
+    // 板块
+    boardComponent: {
+        init: function (con, data) {
+            if (data) this.data = data;
+            return $(con).append(this.getHtml());
+        },
+        getHtml: function () {
+            mCom.headBarComponent.data = this.data.head;
+            return laytpl(this.getTpl()).render({
+                headHtml: mCom.headBarComponent.getHtml(),
+                content: this.data.content
+            });
+        },
+        getTpl: function () {
+            return $.getHtml('com/board.component.html');
+        },
+        data: {
+            head: {
+                title: "关于我们",
+                subtitle: "ABOUT PATON GROUP",
+                url: ""
+            },
+            content: ""
+        }
+    },
+    // 板块——新闻板块内容
+    newsBoardContentComponent: {
+        init: function (con, data) {
+            this.data = data;
+            return $(con).append(this.getHtml());
+        },
+        getHtml: function (data) {
+            if (data) this.data = data;
+            var mainNews = this.data[0],
+                otherNews = this.data.slice(1);
+            var data = $.extend({
+                listHtml: mCom.newsBoardListComponent.getHtml(otherNews)
+            }, mainNews);
+            return laytpl(this.getTpl()).render(data);
+        },
+        getTpl: function () {
+            return $.getHtml('com/news-board-content.component.html');
+        },
+        data: [
+            {
+                img: "img/prod_01.jpg",
+                title: "波司登董事长高德康参与两会:培养工匠型的一线工人",
+                time: "2017-03-06",
+                content: "“中国制造业的转型升级，离不开一大批工匠型的一线产业工人。”十二届全国人大代表、波司登集团董事长在接受记者采访时说。",
+                id: "1"
+            }
+        ]
+    },
+    // 板块——新闻列表
+    newsBoardListComponent: {
+        init: function (con, data) {
+            this.data = data;
+            return $(con).append(this.getHtml());
+        },
+        getHtml: function (data) {
+            if (data) this.data = data;
+            return laytpl(this.getTpl()).render(this.data);
+        },
+        getTpl: function () {
+            return $.getHtml('com/news-board-list.component.html');
+        },
+        data: [
+            {
+                img: "img/prod_01.jpg",
+                title: "波司登董事长高德康参与两会:培养工匠型的一线工人",
+                time: "2017-03-06",
+                content: "“中国制造业的转型升级，离不开一大批工匠型的一线产业工人。”十二届全国人大代表、波司登集团董事长在接受记者采访时说。",
+                id: "1"
+            }
+        ]
+    },
+    // 板块——问答
+    fqaBoardComponent:{
+        init: function (con, data) {
+            this.data = data;
+            return $(con).append(this.getHtml());
+        },
+        getHtml: function (data) {
+            if (data) this.data = data;
+            return laytpl(this.getTpl()).render(this.data);
+        },
+        getTpl: function () {
+            return $.getHtml('com/fqa-board.component.html');
+        },
+        data: []
     }
 };
 

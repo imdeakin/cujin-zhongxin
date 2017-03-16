@@ -167,7 +167,7 @@
     font-size: 18px;
     color: white;
     text-align: center;
-    background: #cc3333;
+    background: #cc0000;
 }
 
 .class-menu li a {
@@ -235,17 +235,20 @@
 }
 
 .sidebar-info > .content {
-    padding: 20px 10px;
+    font-size: 14px;
+    padding: 12px 6px;
     background-color: #eee;
     line-height: 26px;
+    letter-spacing: 0;
 }
 
 /**
  * 板块标题栏
  */
 .head-bar {
-    border-bottom: 1px solid #999;
+    /*border-bottom: 1px solid #999;*/
     line-height: 57px;
+    background: url("../img/h_bar_bg.png") no-repeat bottom/contain;
 }
 
 .head-bar .title {
@@ -320,8 +323,10 @@
 }
 
 .custom-list .info {
+    position: relative;
     float: right;
-    width: 120px;
+    width: 180px;
+    height: 142px;
     font-size: 12px;
     font-weight: bold;
 }
@@ -332,7 +337,9 @@
 }
 
 .custom-list .info .more {
-    margin-top: 16px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .custom-list .info .more > a {
@@ -526,4 +533,94 @@
 
 .kf-board .label.active {
     background-image: url("../img/label_right.png");
+}
+
+/**
+ * 板块众列
+ */
+.board-columns .board-con {
+    float: left;
+    width: 32%;
+    /*height: 310px;*/
+    /*overflow: hidden;*/
+}
+
+.board-columns .board-con:nth-of-type(3n-1) {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.board-columns .board-con .head-bar > .title {
+    font-size: 20px;
+}
+
+.board-columns .board-con .head-bar > .subtitle {
+    font-size: 16px;
+}
+
+.board-columns .board-con .head-bar > .more {
+    font-size: 14px;
+}
+
+.board-columns .head-bar {
+    background-image: url("../img/h_bar_bg2.png");
+}
+
+/**
+ * 新闻板块
+ */
+.news-board-content .main-news {
+    padding: 10px 0;
+}
+
+.news-board-content .main-news > .cover {
+    float: left;
+    width: 130px;
+    padding-bottom: 11px;
+    background: url("../img/img-bt-bg.png") no-repeat bottom/contain;
+}
+
+.news-board-content .main-news h3 {
+    font-size: 14px;
+}
+
+.news-board-content .main-news > .content {
+    float: right;
+    width: 240px;
+}
+
+.news-board-content .more {
+    color: #cc0000;
+    padding-left: 10px;
+}
+
+.news-board-list .item {
+    background: url("../img/angle.png") no-repeat left center;
+}
+
+.news-board-list .item a:hover {
+    text-decoration: underline;
+}
+
+/*
+ * 问答板块
+ */
+.fqa-board-con {
+    overflow: hidden;
+}
+
+.fqa-board-con .item {
+    padding: 10px 0;
+}
+
+.fqa-board-con .item .q {
+    padding-left: 30px;
+    background: url("../img/wen.png") no-repeat left 2px;
+    margin-bottom: 16px;
+}
+
+.fqa-board-con .item .a {
+    line-height: 30px;
+    padding-left: 30px;
+    background: url("../img/da.png") no-repeat left 7px;
 }
