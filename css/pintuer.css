@@ -5971,6 +5971,10 @@ p, .p {
     font-size: 24px
 }
 
+.text-bigger {
+    font-size: 18px;
+}
+
 .text-big {
     font-size: 16px
 }
@@ -8657,6 +8661,15 @@ a:focus, a:hover {
 /* ==========================================================================
    自定义扩展
    ========================================================================== */
+a {
+    color: #3d3d3d;
+    text-decoration: none;
+}
+
+/*链接-颜色*/
+a:focus, a:hover {
+    color: #333;
+}
 
 /*--------自定义文本颜色--------*/
 /*文本-主色*/
@@ -8687,7 +8700,7 @@ blockquote.border-sub strong,
 .pager.border-sub a,
 .pager-prev.border-sub,
 .pager-next.border-sub {
-    color: #999;
+    color: #3c3d3d;
 }
 
 /*文本-背景色*/
@@ -8711,7 +8724,7 @@ blockquote.border-mix,
 .pager.border-mix a,
 .pager-prev.border-mix,
 .pager-next.border-mix {
-    color: #ddd;
+    color: #539ddd;
 }
 
 /*文本-点缀色*/
@@ -8723,7 +8736,7 @@ blockquote.border-dot strong,
 .pager.border-dot a,
 .pager-prev.border-dot,
 .pager-next.border-dot {
-    color: #990000;
+    color: #3397e6;
 }
 
 /*--------自定义背景色--------*/
@@ -8791,7 +8804,7 @@ blockquote.border-dot strong,
 .nav-main.border-main .nav-head,
 .pagination.border-main li,
 .pager.border-main a {
-    border-color: #ccc;
+    border-color: #7fbeff;
 }
 
 /*边框-辅色*/

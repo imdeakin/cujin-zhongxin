@@ -15,6 +15,7 @@
 
     <!--<link rel="stylesheet" href="css/normalize.css">-->
     <link rel="stylesheet" href="css/pintuer.css">
+    <link rel="stylesheet" href="css/idangerous.swiper.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     <!--[if lte IE 8]>
@@ -27,199 +28,318 @@
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
 <![endif]-->
-<header id="header"></header>
-<div id="main" class="clearfix padding-top-bottom">
-    <div class="container">
-        <div class="content"></div>
-        <div class="sidebar">
-            <div class="class"></div>
-            <div class="prod"></div>
-            <div class="info"></div>
+<div id="wrapper" class="container">
+    <header id="header">
+        <div id="header-bar" class="padding-top-bottom">
+            <span class="today"></span>
+            <div class="float-right">
+                <a href="#">设为首页</a>
+                <span> | <a href="#">设为收藏</a> | </span>
+                <a href="#">联系我们</a>
+            </div>
         </div>
-        <div class="clear"></div>
-        <div id="about-board">
-            <div class="head"></div>
-            <div class="content"></div>
+        <div id="header-banner"><img class="img-fluid" src="img/banner.jpg"></div>
+        <div id="header-nav" class="bg-main">
+            <ul class="nav nav-inline">
+                <li class="item text-bigger"><a href="">首页</a></li>
+                <li class="item text-bigger"><a href="">组织介绍</a></li>
+                <li class="item text-bigger"><a href="">小康资讯</a></li>
+                <li class="item text-bigger">
+                    <a href="">工作动态</a>
+                    <ul class="drop-menu">
+                        <li><a href="#">战略合作</a></li>
+                        <li><a href="#">课题研究</a></li>
+                        <li><a href="#">项目交流</a></li>
+                        <li><a href="#">国际合作</a></li>
+                    </ul>
+                </li>
+                <li class="item text-bigger">
+                    <a href="">城镇试点</a>
+                    <ul class="drop-menu">
+                        <li><a href="#">基金管理</a></li>
+                        <li><a href="#">产权融合</a></li>
+                        <li><a href="#">特色小镇</a></li>
+                        <li><a href="#">银行 | 保险 | 证券</a></li>
+                    </ul>
+                </li>
+                <li class="item text-bigger"><a href="">PPP项目</a></li>
+                <li class="item text-bigger">
+                    <a href="">联系我们</a>
+                    <ul class="drop-menu">
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">人才招聘</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-        <div id="custom-board">
-            <div class="head"></div>
-            <div class="content"></div>
+    </header>
+    <div id="main" class="clearfix">
+        <div class="x6 margin-top">
+            <div id="news-swiper" class="swiper-container border border-main">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href=""><img src="img/news_swiper_cover.jpg" class="img-fluid"></a>
+                    </div>
+                    <div class="swiper-slide"><a href=""><img src="img/news_swiper_cover.jpg" class="img-fluid"></a>
+                    </div>
+                    <div class="swiper-slide"><a href=""><img src="img/news_swiper_cover.jpg" class="img-fluid"></a>
+                    </div>
+                    <div class="swiper-slide"><a href=""><img src="img/news_swiper_cover.jpg" class="img-fluid"></a>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
-        <div class="board-columns clearfix"></div>
+        <div class="x6 margin-top">
+            <ul id="news-swiper-list" class="nav border border-main border padding-left-right">
+                <li class="item active">
+                    <a href="">
+                        <h3 class="ellipsis weight-big">互联网+安全食品溯源创新服务平台发布会盛大开幕</h3>
+                        <p class="ellipsis">11月7日，“和谐中国，圆梦小康”互联网+安全食品溯源创新服务平台</p>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="">
+                        <h3 class="ellipsis weight-big">互联网+安全食品溯源创新服务平台发布会盛大开幕</h3>
+                        <p class="ellipsis">11月7日，“和谐中国，圆梦小康”互联网+安全食品溯源创新服务平台</p>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="">
+                        <h3 class="ellipsis weight-big">互联网+安全食品溯源创新服务平台发布会盛大开幕</h3>
+                        <p class="ellipsis">11月7日，“和谐中国，圆梦小康”互联网+安全食品溯源创新服务平台</p>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="">
+                        <h3 class="ellipsis weight-big">互联网+安全食品溯源创新服务平台发布会盛大开幕</h3>
+                        <p class="ellipsis">11月7日，“和谐中国，圆梦小康”互联网+安全食品溯源创新服务平台</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="x6 margin-top padding-small-right">
+            <div id="org-introduce" class="info-board border border-main">
+                <div class="info-board-header border-bottom border-main">
+                    <div class="info-board-title">组织介绍</div>
+                    <a class="info-board-more" href="">[查看更多]</a>
+                </div>
+                <div class="info-board-content padding">
+                    <div class="border border-main padding">
+                        <p>　　中国·城乡小康发展促进中心是经中共中央机构编制委员会国家事业
+                            管理局依法批准成立的国家事业单位,旨在“促进经济发展，服务小康建
+                            设”，主要“从事小康理论研究、信息交流、业务培训以及相关的社会
+                            服务促进全面小康建设、城乡一体化建设具有平台、政策、资源、信息、
+                            团队优势。</p>
+                        <p>　　新型城镇化基金管理委员会是城乡小康发展促进中心的直属机构。
+                            是推动新型城镇化基金管理交流平台，委员会的主要任务是：在十三五
+                            国家新型城镇化发展规划新常态下精准定位、全面、系统推动国内新型
+                            城镇化基金管理交流合作提供咨询服务、强化国内外基金机构和工商企
+                            业搭建应用性新型城镇基金管理业务。致力融合新型城镇化企业家群体
+                            在项目投资、 对话交流、公共关系、产城基金PPP项目的需求服务。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="x6 margin-top padding-small-left">
+            <div id="xk-news" class="info-board border border-main">
+                <div class="info-board-header border-bottom border-main">
+                    <div class="info-board-title">小康资讯</div>
+                    <a class="info-board-more" href="">[查看更多]</a>
+                </div>
+                <div class="info-board-content padding">
+                    <div class="border border-main padding">
+                        <ul class="nav padding-top-bottom">
+                            <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                    class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                            <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                    class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                            <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                    class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                            <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                    class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                            <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                    class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                            <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                    class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                            <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                    class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                            <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                    class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                            <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                    class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="x12 banner margin-top"><img class="img-fluid" src="img/banner.jpg"></div>
+        <div class="x8 padding-small-right margin-top">
+            <div class="info-board border border-main">
+                <div class="info-board-header border-bottom border-main">
+                    <div class="info-board-title">工作动态</div>
+                    <a class="info-board-more" href="">[查看更多]</a>
+                </div>
+                <div class="info-board-content padding clearfix">
+                    <div class="x4 padding-left-right">
+                        <img class="img-fluid" src="img/news_cover.jpg">
+                        <div class="padding-small-top">第20届澳门国际贸易投资展览会第20</div>
+                    </div>
+                    <div class="x4 padding-left-right">
+                        <img class="img-fluid" src="img/news_cover.jpg">
+                        <div class="padding-small-top">第20届澳门国际贸易投资展览会第20届澳门</div>
+                    </div>
+                    <div class="x4 padding-left-right">
+                        <img class="img-fluid" src="img/news_cover.jpg">
+                        <div class="padding-small-top">第20届澳门国际贸易投资展览会第</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="x4 padding-small-left margin-top">
+            <div class="info-board border border-main">
+                <div class="info-board-header border-bottom border-main">
+                    <div class="info-board-title">PPP项目</div>
+                    <a class="info-board-more" href="">[查看更多]</a>
+                </div>
+                <div class="info-board-content padding">
+                    <ul class="nav">
+                        <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                        <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                        <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                        <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                        <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                        <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="x12 margin-top">
+            <div id="city-board" class="info-board border border-main">
+                <div class="info-board-header border-bottom border-main">
+                    <div class="info-board-title">城镇试点</div>
+                    <a class="info-board-more" href="">[查看更多]</a>
+                </div>
+                <div class="info-board-content padding">
+                    <div class="tab">
+                        <div class="tab-head">
+                            <ul class="tab-nav">
+                                <li class="active"><a href="#tab-start">基金管理</a></li>
+                                <li><a href="#tab-css">银行 | 保险 | 证券</a></li>
+                                <li><a href="#tab-units">产权融合</a></li>
+                                <li><a href="#tab-units">特色小镇</a></li>
+                            </ul>
+                        </div>
+                        <div class="tab-body clearfix border border-main">
+                            <div class="x6 padding-left-right-small">
+                                <ul class="nav">
+                                    <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                            class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                                    <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                            class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                                    <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                            class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                                    <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                            class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                                    <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                            class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                                    <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                            class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                                </ul>
+                            </div>
+                            <div class="x6 padding-left-right-small">
+                                <ul class="nav">
+                                    <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                            class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                                    <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                            class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                                    <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                            class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                                    <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                            class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                                    <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                            class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                                    <li class="border-bottom border-dotted"><a href="" class="ellipsis"><span
+                                            class="nav-item-point"></span>第20届澳门国际贸易投资展览会</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="partner-board" class="x12 margin-top border border-main">
+            <div class="text-bigger text-mix padding">战略伙伴：</div>
+            <div class="padding clearfix">
+                <div class="partner-item padding-small">
+                    <img class="img-fluid" src="img/partner.jpg">
+                    <div class="ellipsis">合作伙伴基金会</div>
+                </div>
+                <div class="partner-item padding-small">
+                    <img class="img-fluid" src="img/partner.jpg">
+                    <div class="ellipsis">合作伙伴基金会</div>
+                </div>
+                <div class="partner-item padding-small">
+                    <img class="img-fluid" src="img/partner.jpg">
+                    <div class="ellipsis">合作伙伴基金会</div>
+                </div>
+                <div class="partner-item padding-small">
+                    <img class="img-fluid" src="img/partner.jpg">
+                    <div class="ellipsis">合作伙伴基金会</div>
+                </div>
+                <div class="partner-item padding-small">
+                    <img class="img-fluid" src="img/partner.jpg">
+                    <div class="ellipsis">合作伙伴基金会</div>
+                </div>
+                <div class="partner-item padding-small">
+                    <img class="img-fluid" src="img/partner.jpg">
+                    <div class="ellipsis">合作伙伴基金会</div>
+                </div>
+                <div class="partner-item padding-small">
+                    <img class="img-fluid" src="img/partner.jpg">
+                    <div class="ellipsis">合作伙伴基金会</div>
+                </div>
+                <div class="partner-item padding-small">
+                    <img class="img-fluid" src="img/partner.jpg">
+                    <div class="ellipsis">合作伙伴基金会</div>
+                </div>
+            </div>
+        </div>
     </div>
+    <footer id="footer" class="border-top border-main margin-top text-center padding-top-bottom-big">
+        <div class="padding-little">地址：北京市丰台区青塔西路15号习鼎阁大厦4层</div>
+        <div class="padding-little">广州市越秀区越华路珠江国际大厦3905</div>
+        <div class="padding-little">热线电话:010-57152205</div>
+        <div class="padding-little">粤ICP备15059219号-1</div>
+    </footer>
 </div>
-<footer id="footer"></footer>
 <script src="js/vendor/jquery-1.12.0.min.js"></script>
+<script src="js/vendor/idangerous.swiper.js"></script>
 <script src="js/vendor/laytpl.js"></script>
-<script src="js/vendor/jquery.marquee.min.js"></script>
+<script src="js/vendor/layer/layer.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 <script src="js/vendor/pintuer.js"></script>
 <script>
     $(function () {
-        //正文
-        mCom.boardComponent.init('#main > .container > .content', {
-            head: {
-                title: "新品推荐",
-                subtitle: "NEW PRODUCTS",
-                url: ""
-            },
-            content: mCom.simpleProdListComponent.getHtml()
+        var items = $('#news-swiper-list .item');
+        var swiper = new Swiper('#news-swiper', {
+            pagination: '#news-swiper .swiper-pagination',
+            paginationClickable: true,
+            onSlideChangeStart: function (swiper) {
+                items.eq(swiper.activeIndex).addClass('active').siblings().removeClass('active');
+            }
         });
 
-        //客户案例
-        mCom.boardComponent.init('#custom-board', {
-            head: {
-                title: "客户案例",
-                subtitle: "CUSTOMER CASE",
-                url: ""
-            },
-            content: mCom.customListComponent.getHtml()
+        items.mouseenter(function () {
+            var index = items.index(this);
+            swiper.swipeTo(index);
         });
-
-        //关于我们
-        mCom.boardComponent.init('#about-board', {
-            head: {
-                title: "关于我们",
-                subtitle: "ABOUT PATON GROUP",
-                url: ""
-            },
-            content: '<h3>广州杰美服装有限公司</h3>' +
-            '<p>广州杰美服装有限公司是一家集设计、面料开发，生产、销售、CT策划为一体的专业制服公司，于2004年在广州市番禺建厂，其厂房规模面积达10000平方米，厂内员工有600多人，（其中部分职员办公司地点在广州白云区）是广东制服生产龙头企业。' +
-            '杰美公司生产基地凭借从德国（凤眼机、珠边机）、日本（开袋机、挑襟机，验布机，粘衬机）、意大利（缩水机，高温人体西装定型机）引进的最先进的生产设备，以及雄厚的生产实力和完善的管理体系，为国内各行各业制服生产，提供了尽善尽美的专业服务。' +
-            '杰美服装有限公司是从事金融业，房地产，保险业，工矿企业，物业公司等设计开发，生产制作，销售为一体的专业制服公司，同时还致力于国家环保，航空，铁路，海关，行政机关，学校制服的研制开发。' +
-            '我们把各大企业的CI，VI系统导入制服的设计中，根据各个合作伙伴的不同定位，为每一个合作伙伴供量身定做的服务，从而确保每一个客户可以身着具有本企业...<a class="more"' +
-            'href="#">[查看详情]</a></p>'
-        });
-
-        //公司动态
-        mCom.boardComponent.init('.board-columns', {
-            head: {
-                title: "公司动态",
-                subtitle: "COMPANY DYNAMIC",
-                url: "news.html"
-            },
-            content: mCom.newsBoardContentComponent.getHtml([
-                {
-                    img: "img/news_01.jpg",
-                    title: "波司登董事长高德康参与两会:培养工匠型的一线工人",
-                    time: "2017-03-06",
-                    content: "“中国制造业的转型升级，离不开一大批工匠型的一线产业工人。”十二届全国人大代表、波司登集团董事长在接受记者采访时说。",
-                    id: "1"
-                },
-                {
-                    img: "img/news_01.jpg",
-                    title: "波司登董事长高德康参与两会:培养工匠型的一线工人",
-                    time: "2017-03-06",
-                    content: "“中国制造业的转型升级，离不开一大批工匠型的一线产业工人。”十二届全国人大代表、波司登集团董事长在接受记者采访时说。",
-                    id: "1"
-                },
-                {
-                    img: "img/news_01.jpg",
-                    title: "波司登董事长高德康参与两会:培养工匠型的一线工人",
-                    time: "2017-03-06",
-                    content: "“中国制造业的转型升级，离不开一大批工匠型的一线产业工人。”十二届全国人大代表、波司登集团董事长在接受记者采访时说。",
-                    id: "1"
-                },
-                {
-                    img: "img/news_01.jpg",
-                    title: "波司登董事长高德康参与两会:培养工匠型的一线工人",
-                    time: "2017-03-06",
-                    content: "“中国制造业的转型升级，离不开一大批工匠型的一线产业工人。”十二届全国人大代表、波司登集团董事长在接受记者采访时说。",
-                    id: "1"
-                },
-                {
-                    img: "img/news_01.jpg",
-                    title: "波司登董事长高德康参与两会:培养工匠型的一线工人",
-                    time: "2017-03-06",
-                    content: "“中国制造业的转型升级，离不开一大批工匠型的一线产业工人。”十二届全国人大代表、波司登集团董事长在接受记者采访时说。",
-                    id: "1"
-                }
-            ])
-        });
-
-        //行业动态
-        mCom.boardComponent.init('.board-columns', {
-            head: {
-                title: "行业动态",
-                subtitle: "INDUSTRY DYNAMIC",
-                url: "news.html"
-            },
-            content: mCom.newsBoardContentComponent.getHtml([
-                {
-                    img: "img/news_01.jpg",
-                    title: "波司登董事长高德康参与两会:培养工匠型的一线工人",
-                    time: "2017-03-06",
-                    content: "“中国制造业的转型升级，离不开一大批工匠型的一线产业工人。”十二届全国人大代表、波司登集团董事长在接受记者采访时说。",
-                    id: "1"
-                },
-                {
-                    img: "img/news_01.jpg",
-                    title: "波司登董事长高德康参与两会:培养工匠型的一线工人",
-                    time: "2017-03-06",
-                    content: "“中国制造业的转型升级，离不开一大批工匠型的一线产业工人。”十二届全国人大代表、波司登集团董事长在接受记者采访时说。",
-                    id: "1"
-                },
-                {
-                    img: "img/news_01.jpg",
-                    title: "波司登董事长高德康参与两会:培养工匠型的一线工人",
-                    time: "2017-03-06",
-                    content: "“中国制造业的转型升级，离不开一大批工匠型的一线产业工人。”十二届全国人大代表、波司登集团董事长在接受记者采访时说。",
-                    id: "1"
-                },
-                {
-                    img: "img/news_01.jpg",
-                    title: "波司登董事长高德康参与两会:培养工匠型的一线工人",
-                    time: "2017-03-06",
-                    content: "“中国制造业的转型升级，离不开一大批工匠型的一线产业工人。”十二届全国人大代表、波司登集团董事长在接受记者采访时说。",
-                    id: "1"
-                },
-                {
-                    img: "img/news_01.jpg",
-                    title: "波司登董事长高德康参与两会:培养工匠型的一线工人",
-                    time: "2017-03-06",
-                    content: "“中国制造业的转型升级，离不开一大批工匠型的一线产业工人。”十二届全国人大代表、波司登集团董事长在接受记者采访时说。",
-                    id: "1"
-                }
-            ])
-        });
-
-        //常见问题
-        mCom.boardComponent.init('.board-columns', {
-            head: {
-                title: "常见问题",
-                subtitle: "INDUSTRY DYNAMIC",
-                url: "qna.html"
-            },
-            content: mCom.fqaBoardComponent.getHtml([
-                {
-                    question: "贵公司的加工方式有几种？",
-                    answer: "贵公司的加工方式有几种？我公司的加工方式有4种，原创设计、客户来样、来图（提供细节图、尺寸、面料），选版加工。"
-                },
-                {
-                    question: "贵公司的加工方式有几种？",
-                    answer: "贵公司的加工方式有几种？我公司的加工方式有4种，原创设计、客户来样、来图（提供细节图、尺寸、面料），选版加工。"
-                },
-                {
-                    question: "贵公司的加工方式有几种？",
-                    answer: "贵公司的加工方式有几种？我公司的加工方式有4种，原创设计、客户来样、来图（提供细节图、尺寸、面料），选版加工。"
-                }
-            ])
-        });
-        $('.fqa-board-con').marquee({
-            duration: 10000,
-            gap: 0,
-            delayBeforeStart: 0,
-            direction: 'up',
-            duplicated: true,
-            pauseOnHover: true,
-            startVisible: true
-        });
-
-        //侧边栏
-        mCom.sidebarClassComponent.init('#main > .container > .sidebar > .class');
-        mCom.sidebarProdComponent.init('#main > .container > .sidebar > .prod');
-        mCom.sidebarInfoComponent.init('#main > .container > .sidebar > .info');
     });
 </script>
 </body>
