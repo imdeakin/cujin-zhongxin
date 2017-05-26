@@ -1,0 +1,216 @@
+<!doctype html>
+<html class="no-js" lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!--<link rel="stylesheet" href="css/normalize.css">-->
+    <link rel="stylesheet" href="css/pintuer.css">
+    <link rel="stylesheet" href="css/idangerous.swiper.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <!--[if lte IE 8]>
+    <script type="text/javascript" src="js/vendor/html5.js"></script>
+    <script type="text/javascript" src="js/vendor/respond.js"></script>
+    <![endif]-->
+    <style>
+        #content img {
+            max-width: 100% !important;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<div id="wrapper" class="container">
+    <header id="header">
+        <div id="header-bar" class="padding-top-bottom">
+            <span class="today"></span>
+            <div class="float-right">
+                <a href="javascript:;" class="win-homepage">设为首页</a>
+                <span> | <a href="javascript:;" class="win-favorite">设为收藏</a> | </span>
+                <a href="contact.html">联系我们</a>
+            </div>
+        </div>
+        <div id="header-banner"><img class="img-fluid" src="img/banner.jpg"></div>
+        <div id="header-nav"></div>
+    </header>
+    <div id="main" class="clearfix padding-top-bottom">
+        <div id="sidebar" class="x3 padding-small-right"></div>
+        <div id="content" class="x9 padding-small-left">
+            <div class="info-board bg-white border border-main">
+                <div class="info-board-header border-bottom border-main">
+                    <div class="info-board-title">当前位置</div>
+                    <div class="crumbs"></div>
+                </div>
+                <div class="info-board-content padding-big"></div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer"></footer>
+</div>
+<script src="js/vendor/jquery-1.12.0.min.js"></script>
+<script src="js/vendor/idangerous.swiper.js"></script>
+<script src="js/vendor/jquery.pagination.js"></script>
+<script src="js/vendor/laytpl.js"></script>
+<script src="js/vendor/layer/layer.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script src="js/vendor/pintuer.js"></script>
+<script type="text/html" id="news-detail-tpl">
+    <div class="text-large text-center">{{d.title}}</div>
+    <div class="text-sub text-center">更新时间：{{d.create_time}}</div>
+    <div class="padding-top">{{d.content}}</div>
+</script>
+<script type="text/html" id="sidebar-board-tpl">
+    <div class="info-board bg-white border border-main margin-bottom">
+        <div class="info-board-header border-bottom border-main">
+            <div class="info-board-title">{{d.title}}</div>
+        </div>
+        <div class="info-board-content padding">
+            <ul class="nav">
+                {{# if(d.isSubMenu){ }}
+                {{# for(var i = 0, list = d.list, len = list.length; i < len; i++){var t = list[i]; }}
+                <li><a href="news-detail.html?type={{t.cid}}&idx={{d.index}}&sub=ture" class="ellipsis"><span
+                        class="nav-item-point"></span>{{t.remark}}</a></li>
+                {{# } }}
+                {{# } else { }}
+                {{# for(var i = 0, list = d.list, len = list.length; i < len; i++){var t = list[i]; }}
+                <li><a href="news-detail.html?id={{t.info_id}}&idx={{d.index}}" class="ellipsis"><span
+                        class="nav-item-point"></span>{{t.title}}</a></li>
+                {{# } }}
+                {{# } }}
+            </ul>
+        </div>
+    </div>
+</script>
+<script>
+    var urlParams = {};
+
+    // 设置导航当前项
+    $(function () {
+        urlParams = $.getURLParams();
+        var index = parseInt(urlParams.idx);
+        setNavIndex(index);
+    });
+
+    // 侧边栏
+    $(function () {
+
+        var addBoard = function (title, index, list, isSubMenu) {
+            laytpl($('#sidebar-board-tpl').html()).render({
+                title: title,
+                index: index,
+                isSubMenu: isSubMenu,
+                list: list
+            }, function (render) {
+                $('#sidebar').append(render);
+            });
+        };
+
+        var getNewsList = function (title, index, type) {
+            apiCall.getNewsList({
+                data: {
+                    carousel: apiConst.newsType.normal,
+                    cid: type,
+                    pnum: 1,
+                    psize: 6
+                },
+                success: function (list) {
+                    addBoard(title, index, list);
+                },
+                loading: false
+            });
+        };
+
+        if (urlParams.sub) {
+            var title = '';
+            var list = 0;
+            switch (parseInt(urlParams.idx)) {
+                case 3:
+                    title = '工作动态';
+                    list = apiConst.subMenu.work_trend;
+                    break;
+                case 4:
+                    title = '城镇试点';
+                    list = apiConst.subMenu.e_town;
+                    break;
+            }
+            addBoard(title, urlParams.idx, list, true);
+        } else {
+            getNewsList('小康资讯', 2, apiConst.newsType.xk);
+            getNewsList('工作动态', 3, apiConst.newsType.work);
+            getNewsList('城镇试点', 4, apiConst.newsType.town);
+            getNewsList('PPP项目', 5, apiConst.newsType.ppp);
+        }
+    });
+
+    // 面包屑导航
+    $(function () {
+        var curTitle = '';
+        switch (parseInt(urlParams.idx)) {
+            case 1:
+                curTitle = '组织介绍';
+                break;
+            case 2:
+                curTitle = '小康资讯';
+                break;
+            case 3:
+                curTitle = '工作动态';
+                break;
+            case 4:
+                curTitle = '城镇试点';
+                break;
+            case 5:
+                curTitle = 'PPP项目';
+                break;
+            case 6:
+                curTitle = '联系我们';
+                break;
+            default:
+                curTitle = '首页'
+        }
+        var nav = [
+            {
+                name: "首页",
+                url: "index.html"
+            },
+            {
+                name: curTitle,
+                url: "#"
+            }
+        ];
+        mCom.crumbsComponent.init('.crumbs', nav);
+    });
+
+    // 获取详情
+    $(function () {
+        apiCall.getNewsDetail({
+            data: {
+                info_id: urlParams['id']
+            },
+            success: function (list) {
+                if (list[0]) {
+                    laytpl($('#news-detail-tpl').html()).render(list[0], function (render) {
+                        $('#content .info-board-content').html(render);
+                    });
+                }
+            },
+            loading: false
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html class="no-js" lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!--<link rel="stylesheet" href="css/normalize.css">-->
+    <link rel="stylesheet" href="css/pintuer.css">
+    <link rel="stylesheet" href="css/idangerous.swiper.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <!--[if lte IE 8]>
+    <script type="text/javascript" src="js/vendor/html5.js"></script>
+    <script type="text/javascript" src="js/vendor/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<div id="wrapper" class="container">
+    <header id="header">
+        <div id="header-bar" class="padding-top-bottom">
+            <span class="today"></span>
+            <div class="float-right">
+                <a href="javascript:;" class="win-homepage">设为首页</a>
+                <span> | <a href="javascript:;" class="win-favorite">设为收藏</a> | </span>
+                <a href="contact.html">联系我们</a>
+            </div>
+        </div>
+        <div id="header-banner"><img class="img-fluid" src="img/banner.jpg"></div>
+        <div id="header-nav"></div>
+    </header>
+    <div id="main" class="clearfix padding-top-bottom">
+        <div id="sidebar" class="x3 padding-small-right">
+            <div class="info-board bg-white border border-main">
+                <div class="info-board-header border-bottom border-main">
+                    <div class="info-board-title">联系我们</div>
+                </div>
+                <div class="info-board-content padding">
+                    <ul class="nav">
+                        <li><a href="javascript:;" class="ellipsis"><span class="nav-item-point"></span>联系我们</a></li>
+                        <li><a href="news-list.html?type=14&idx=6" class="ellipsis"><span class="nav-item-point"></span>人才招聘</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="content" class="x9 padding-small-left">
+            <div class="info-board bg-white border border-main">
+                <div class="info-board-header border-bottom border-main">
+                    <div class="info-board-title">当前位置</div>
+                    <div class="crumbs"></div>
+                </div>
+                <div class="info-board-content padding-large">
+                    <div class="padding-little text-big">地址：北京市丰台区青塔西路15号习鼎阁大厦4层</div>
+                    <div class="padding-little text-big">　　　广州市越秀区越华路珠江国际大厦3905</div>
+                    <div class="padding-small text-big">电话：010-57152205</div>
+                    <div class="padding-small text-big">传真：13826288577</div>
+                    <div class="padding-small text-big">邮箱：18666650993@163.com</div>
+                    <div class="padding-small text-big">微信公众号：<img class="ver-top" src="img/vcode.jpg"></div>
+                    <div id="map" class="margin-top" style="height:360px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer"></footer>
+</div>
+<script src="js/vendor/jquery-1.12.0.min.js"></script>
+<script src="js/vendor/idangerous.swiper.js"></script>
+<script src="js/vendor/jquery.pagination.js"></script>
+<script src="js/vendor/laytpl.js"></script>
+<script src="js/vendor/layer/layer.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+<script src="js/vendor/pintuer.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=5c4b6cfcdf62237013fe7c34ddb9d80c"></script>
+<script>
+    // 设置导航当前项
+    $(function () {
+        setNavIndex(6);
+    });
+
+    // 面包屑导航
+    $(function () {
+        var nav = [
+            {
+                name: "首页",
+                url: "index.html"
+            },
+            {
+                name: "联系我们",
+                url: "#"
+            }
+        ];
+        mCom.crumbsComponent.init('.crumbs', nav);
+    });
+
+    //百度地图
+    (function () {
+        var map = new BMap.Map('map');
+        var poi = new BMap.Point(113.273865,23.135606);
+        map.centerAndZoom(poi, 18);
+        // map.enableScrollWheelZoom(); //开启鼠标滚动缩放
+        // map.disableDragging(); //禁止拖拽
+        var marker = new BMap.Marker(poi); //创建标注marker对象
+        map.addOverlay(marker); //在地图中添加marker
+
+        var opts = {
+            width: 260     // 信息窗口宽度
+        };
+
+        var infoWindow = new BMap.InfoWindow('<div id="mapMsg" style="line-height:24px; font-size:16px;">' +
+            '<div style="color:#333;font-size:14px;">广州市越秀区越华路珠江国际大厦3905</div>' +
+            '</div>', opts);  // 创建信息窗口对象
+
+        map.openInfoWindow(infoWindow, poi); //开启信息窗口
+
+        marker.addEventListener("click", function () {
+            map.openInfoWindow(infoWindow, poi); //开启信息窗口
+        });
+    })();
+</script>
+</body>
+</html>

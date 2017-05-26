@@ -4,6 +4,8 @@ html, body {
 
 #wrapper {
     width: 1020px;
+    background: white;
+    padding: 0;
 }
 
 /* 头部导航 */
@@ -31,9 +33,11 @@ html, body {
 #header-nav .drop-menu {
     display: none;
     width: 100%;
+    min-width: 100%;
     background: #539ddd;
     padding: 0;
     border-radius: 0;
+    z-index: 999;
 }
 
 #header-nav .drop-menu ul {
@@ -54,6 +58,10 @@ html, body {
 
 #header-nav .item.active, #header-nav .item:hover, #header-nav .drop-menu li a:hover {
     background: url("../img/nav_bg_a.jpg") repeat-x left top;
+}
+
+#header-nav .nav .active a {
+    font-weight: normal;
 }
 
 #header-nav .item:hover .drop-menu {
@@ -84,15 +92,22 @@ html, body {
 }
 
 #news-swiper-list .item.active a, #news-swiper-list .item a:hover {
-    color: white;
-    /*border-color: #539ddd;*/
     background: url("../img/news_swiper_list_bg_a.jpg ") repeat-x left top;
 }
 
-#news-swiper-list .item a p {
+#news-swiper-list .item h3 {
+    color: #3397e6;
+}
+
+#news-swiper-list .item p {
     margin: 0;
     margin-top: 6px;
     line-height: 1em;
+    color: #666;
+}
+
+#news-swiper-list .item.active h3, #news-swiper-list .item.active p {
+    color: white;
 }
 
 /* 小板块 */
@@ -151,7 +166,84 @@ html, body {
     background: #539ddd;
 }
 
+#city-board .tab-body {
+    min-height: 210px;
+}
+
 #partner-board .partner-item {
     float: left;
     width: 12.5%;
+}
+
+#work-news .info-board-content, #ppp-news .info-board-content {
+    min-height: 162px;
+}
+
+/**
+ * 分页导航
+ */
+.pagination {
+    display: block;
+    font-size: 0;
+    text-align: center;
+}
+
+.pagination > span, .pagination > a {
+    display: inline;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #666;
+    border: 1px solid #ccc;
+}
+
+.pagination > span:hover, .pagination > a:hover {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.pagination > .current {
+    margin: 0 5px;
+    border-color: transparent;
+    color: #333;
+}
+
+.pagination > .prev, .pagination > .next {
+    color: white;
+    background: #539ddd;
+}
+
+.pagination > .prev:hover, .pagination > .next:hover {
+    color: white;
+    background: #539ddd;
+}
+
+.pagination > .current.prev, .pagination > .current.next {
+    border-color: #ccc;
+    margin: 0;
+}
+
+.pagination > a {
+    margin: 0 5px;
+}
+
+/**
+ * 面包屑导航
+ */
+.crumbs {
+    display: inline-block;
+}
+
+.crumbs-con {
+    line-height: 34px;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+.crumbs-con a {
+    color: #333;
+}
+
+.crumbs-con a:hover {
+    text-decoration: underline;
 }

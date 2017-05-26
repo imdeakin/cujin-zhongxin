@@ -329,25 +329,24 @@
                 lockTarget = $(setting['lock']).length ? $(setting['lock']) : '';
             //防止重复请求
             if (lockTarget && lockTarget.isDisable()) return;
-
             if (loading) var idx = layer.load(2);
             var ajaxSuccess = function (data) {
                     //这里根据实际数据来调整
                     //现在返回的数据格式是：
                     // data = {
                     //     success: true, // 接口返回的成功或失败，如果失败，就回调failure，成功就回调success
-                    //     msg: '', // 接口返回的信息，成功，失败，异常之类的
+                    //     result: '', // 接口返回的信息，成功，失败，异常之类的
                     //     root: [] // 数据在这里，不一定要数组，看自己的情况
                     // };
                     if (!onlySuccess && !data['success']) {
                         //接口返回失败
-                        alertError && layer.msg(data['msg']);
+                        alertError && layer.msg(data['result']);
                         failure && failure(data);
                         return;
                     }
 
                     //接口返回成功 把数据传递过去
-                    success && success(fullData ? data : data['root']);
+                    success && success(fullData ? data : data['root'], data['total']);
                 },
                 ajaxFailure = function (XMLHttpRequest, textStatus, errorThrown) {
                     console.error("Api Error: " + api);

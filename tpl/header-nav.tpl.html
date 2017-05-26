@@ -1,0 +1,37 @@
+<ul class="nav nav-inline">
+    <li class="item text-bigger"><a href="index.html">首页</a></li>
+    <li class="item text-bigger"><a href="news-detail.html?id=1319139849561649&idx=1">组织介绍</a></li>
+    <li class="item text-bigger"><a href="news-list.html?type=1&idx=2">小康资讯</a></li>
+    <li class="item text-bigger">
+        <a href="javascript:;">工作动态</a>
+        <ul class="drop-menu">
+            {{# for(var i = 0, list = d.work_trend, len = list.length; i < len; i++){var t = list[i]; }}
+            <li><a href="news-list.html?type={{t.cid}}&idx=3&sub=true">{{t.remark}}</a></li>
+            {{# } }}
+            <!--<li><a href="#">战略合作</a></li>-->
+            <!--<li><a href="#">课题研究</a></li>-->
+            <!--<li><a href="#">项目交流</a></li>-->
+            <!--<li><a href="#">国际合作</a></li>-->
+        </ul>
+    </li>
+    <li class="item text-bigger">
+        <a href="javascript:;">城镇试点</a>
+        <ul class="drop-menu">
+            {{# for(var i = 0, list = d.e_town, len = list.length; i < len; i++){var t = list[i]; }}
+            <li><a href="news-list.html?type={{t.cid}}&idx=4&sub=true">{{t.remark}}</a></li>
+            {{# } }}
+            <!--<li><a href="#">基金管理</a></li>-->
+            <!--<li><a href="#">产权融合</a></li>-->
+            <!--<li><a href="#">特色小镇</a></li>-->
+            <!--<li><a href="#">银行 | 保险 | 证券</a></li>-->
+        </ul>
+    </li>
+    <li class="item text-bigger"><a href="news-list.html?type=4&idx=5">PPP项目</a></li>
+    <li class="item text-bigger">
+        <a href="javascript:;">联系我们</a>
+        <ul class="drop-menu">
+            <li><a href="contact.html">联系我们</a></li>
+            <li><a href="news-list.html?type=14&idx=6">人才招聘</a></li>
+        </ul>
+    </li>
+</ul>
